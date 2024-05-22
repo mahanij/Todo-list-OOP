@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- fonts part -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- fonts part -->
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/dropdown.css" />
+    <link rel="stylesheet" href="./output.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-4">
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold">Todo</h1>
+        <button
+          class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-800"
+        >
+          Share prototype
+        </button>
+      </div>
+      <form class="bg-gray-800 p-4 rounded-lg">
+        <input
+          type="text"
+          name="title"  
+          placeholder="Adicione uma nova tarefa"
+          class="w-full p-2 mb-4 rounded-lg bg-gray-700 text-white placeholder-gray-400 input-title  border-[2px]"
+        />
+        <input
+          type="submit"
+          class="bg-green-600 text-white px-4 py-2 rounded-lg w-full inline-block hover:bg-green-800"
+          
+        />
+      </form>
+      <div class="mt-6">
+        <div class="flex justify-between mb-2">
+          <span>Tarefas criadas</span>
+          <span>Concluídas</span>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg mb-4 todo-container">
+          <div class="flex justify-between items-center mb-2">
+            <span
+              >Integer urna interdum massa libero auctor neque turpis turpis
+              semper. Duis vel sed fames integer.</span
+            >
+            <div class="flex items-center">
+              <button
+                class="bg-green-600 p-2 rounded-full mr-2 hover:bg-green-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.707-4.707a1 1 0 111.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button class="bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mb-2">
+            <span
+              >Integer urna interdum massa libero auctor neque turpis turpis
+              semper. Duis vel sed fames integer.</span
+            >
+            <div class="flex items-center">
+              <button
+                class="bg-green-600 p-2 rounded-full mr-2 hover:bg-green-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.707-4.707a1 1 0 111.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button class="bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mb-2">
+            <span
+              >Integer urna interdum massa libero auctor neque turpis turpis
+              semper. Duis vel sed fames integer.</span
+            >
+            <div class="flex items-center">
+              <button
+                class="bg-green-600 p-2 rounded-full mr-2 hover:bg-green-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.707-4.707a1 1 0 111.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button class="bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mb-2 text-gray-500">
+            <span
+              >Integer urna interdum massa libero auctor neque turpis turpis
+              semper. Duis vel sed fames integer.</span
+            >
+            <div class="flex items-center">
+              <button
+                class="bg-green-600 p-2 rounded-full mr-2 hover:bg-green-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.707-4.707a1 1 0 111.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button class="bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mb-2 text-gray-500">
+            <span
+              >Integer urna interdum massa libero auctor neque turpis turpis
+              semper. Duis vel sed fames integer.</span
+            >
+            <div class="flex items-center">
+              <button
+                class="bg-green-600 p-2 rounded-full mr-2 hover:bg-green-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.707-4.707a1 1 0 111.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button class="bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
