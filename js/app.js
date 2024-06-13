@@ -1,4 +1,4 @@
-const todos = [];
+var todos = JSON.parse(localStorage.getItem("works")) || [];
 
 const form = document.getElementsByTagName("form")[0];
 
@@ -21,7 +21,7 @@ form.addEventListener("submit", (e) => {
     id: makeNUmber(todos),
   };
   todos.push(todoList);
-  render(todos , todoContainer);
+  render(todos, todoContainer);
   e.target.title.value = "";
   localStorage.setItem("works", JSON.stringify(todos));
   e.preventDefault();
@@ -32,24 +32,26 @@ function makeNUmber(array) {
   return index;
 }
 
-render(JSON.parse(localStorage.getItem("works")) , todoContainer);
+render(JSON.parse(localStorage.getItem("works")), todoContainer);
 
 function render(array, container) {
-  console.log(array);
   container.innerHTML = "";
   array.forEach((element) => {
     let div = document.createElement("div");
-    div.classList.add("flex");
-    div.classList.add("justify-between");
-    div.classList.add("items-center");
-    div.classList.add("mb-2");
+    div.classList.add("flex", "justify-between", "items-center", "mb-2");
+    console.log(element.isAvailable);
+    if (!element.isAvailable) {
+      div.classList.add("opacity-50");
+    } else {
+      div.classList.remove("opacity-50");
+    }
     div.innerHTML = `
     <span
       > ${element.title} </span
     >
     <div class="flex items-center">
       <button
-        class="bg-green-600 p-2 rounded-full mr-2 hover:bg-green-800"
+        class="bg-green-600 p-2 rounded-full mr-2 hover:bg-green-800 check-btn"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +66,7 @@ function render(array, container) {
           />
         </svg>
       </button>
-      <button class="bg-gray-600 p-2 rounded-full hover:bg-gray-700">
+      <button class="delete-btn bg-gray-600 p-2 rounded-full hover:bg-gray-700 delet-btn" id='${element.id}'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
@@ -85,4 +87,26 @@ function render(array, container) {
     container.appendChild(div);
   });
   return;
+}
+
+delet();
+
+function delet() {
+  todoContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+      todos = todos.filter((item) => {
+        console.log("click", e.target.id);
+        return item.id != e.target.id;
+      });
+    }
+    if (e.target.classList.contains("check-btn")) {
+      todos.forEach((element) => {
+        if ((e.target.id = element.id)) {
+          element.isAvailable = !element.isAvailable;
+        }
+      });
+    }
+    localStorage.setItem("works", JSON.stringify(todos));
+    render(todos, todoContainer);
+  });
 }
